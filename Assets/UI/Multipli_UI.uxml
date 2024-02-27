@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=4e51d8174982f374f8429738a2553106&amp;type=3#StyleSheet" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: auto; align-self: flex-end; flex-wrap: wrap; align-items: stretch; justify-content: flex-end; max-width: 50%;">
+            <ui:VisualElement name="Text" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; align-self: flex-end; height: initial; padding-top: 5%; padding-left: 0; padding-right: 0; padding-bottom: 0; flex-direction: column; align-items: stretch; justify-content: center;">
+                <ui:Label tabindex="-1" text="Combien font" display-tooltip-when-elided="true" name="Question" class="question" />
+                <ui:Label tabindex="-1" text="6 x 6 ?" display-tooltip-when-elided="true" name="Question" class="question" />
+                <ui:Label tabindex="-1" text="36" display-tooltip-when-elided="true" name="Answer" class="answer" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Numpad" class="numpad" style="max-width: none; flex-shrink: 0; flex-grow: 1; width: 100%; max-height: none;">
+                <ui:Button text="1" display-tooltip-when-elided="true" name="button-one" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                <ui:Button text="2" display-tooltip-when-elided="true" name="button-two" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                <ui:Button text="3" display-tooltip-when-elided="true" name="button-three" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                <ui:Button text="4" display-tooltip-when-elided="true" name="button-four" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                <ui:Button text="5" display-tooltip-when-elided="true" name="button-five" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                <ui:Button text="6" display-tooltip-when-elided="true" name="button-six" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                <ui:Button text="7" display-tooltip-when-elided="true" name="button-seven" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                <ui:Button text="8" display-tooltip-when-elided="true" name="button-eight" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                <ui:Button text="9" display-tooltip-when-elided="true" name="button-nine" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                <ui:Button text="X" display-tooltip-when-elided="true" name="button-clear" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                <ui:Button text="0" display-tooltip-when-elided="true" name="button-zero" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                <ui:Button text="OK" display-tooltip-when-elided="true" name="button-ok" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
