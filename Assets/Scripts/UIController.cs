@@ -23,7 +23,9 @@ public class UIController : MonoBehaviour
         Button buttonZero = root.Q<Button>("button-zero");
         Button buttonClear = root.Q<Button>("button-clear");
         Button buttonOk = root.Q<Button>("button-ok");
-        
-        
+
+        TextField textField = root.Q<TextField>("Answer");
+    
+        buttonOk.clicked += () => Debug.Log("Value: " + textField.text);
     }
 }
