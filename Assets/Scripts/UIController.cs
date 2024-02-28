@@ -1,34 +1,45 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class UIController : MonoBehaviour
 {
-    private int _answer;
+    private int _answerResult;
+    private Label _answerLabel;
     public void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-        
-        
-        Button buttonOne = root.Q<Button>("button-one");
-        Button buttonTwo = root.Q<Button>("button-two");
-        Button buttonThree = root.Q<Button>("button-three");
-        Button buttonFour = root.Q<Button>("button-four");
-        Button buttonFive = root.Q<Button>("button-five");
-        Button buttonSix = root.Q<Button>("button-six");
-        Button buttonSeven = root.Q<Button>("button-seven");
-        Button buttonHeight = root.Q<Button>("button-height");
-        Button buttonNine = root.Q<Button>("button-nine");
-        Button buttonZero = root.Q<Button>("button-zero");
-        Button buttonClear = root.Q<Button>("button-clear");
-        Button buttonOk = root.Q<Button>("button-ok");
+        _answerLabel = root.Q<Label>("Answer");
 
-        Label myLabel = root.Q<Label>("Answer");
+        for (int i = 0; i < 10; i++)
+        {
+            Button button = root.Q<Button>("button" + i);
 
-        buttonOk.clicked += () => myLabel.text = "OK";
+            if (button != null)
+            {
+                button.RegisterCallback<ClickEvent>(ev => OnNumPadPressedButton(button));
+            }
+        }
+        root.Q<Button>("button-clear").RegisterCallback<ClickEvent>(ev => OnNumpadClear());
+        root.Q<Button>("button-ok").RegisterCallback<ClickEvent>(ev => OnNumpadValidate());
         
-        
+    }
+
+    private void OnNumpadValidate()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void OnNumpadClear()
+    {
+        _answerLabel.text = "";
+    }
+
+    private void OnNumPadPressedButton(Button button)
+    {
+        _answerLabel.text += button.text;
     }
 }

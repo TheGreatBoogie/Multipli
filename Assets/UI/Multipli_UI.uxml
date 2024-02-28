@@ -2,24 +2,26 @@
     <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=4e51d8174982f374f8429738a2553106&amp;type=3#StyleSheet" />
     <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-items: flex-end; flex-wrap: wrap; overflow: hidden;">
         <ui:VisualElement name="Container" style="flex-wrap: wrap; flex-direction: column; width: 50%; justify-content: center; align-items: center; flex-grow: 1; align-self: flex-end;">
-            <ui:VisualElement name="Text" style="-unity-text-align: upper-center; justify-content: flex-start; width: 100%;">
-                <ui:Label tabindex="-1" text="Combien font" display-tooltip-when-elided="true" name="Question" class="question" />
-                <ui:Label tabindex="-1" text="6 x 6 ?" display-tooltip-when-elided="true" name="Question" class="question" />
-                <ui:Label tabindex="-1" text="36" display-tooltip-when-elided="true" name="Answer" class="answer" />
+            <ui:VisualElement name="Text" style="-unity-text-align: upper-center; justify-content: flex-start; width: 100%; align-items: center; margin-bottom: 4%;">
+                <ui:Label tabindex="-1" text="Combien font" display-tooltip-when-elided="true" name="Question" class="question text-block" />
+                <ui:Label tabindex="-1" text="6 x 6 ?" display-tooltip-when-elided="true" name="Question" class="question text-block" />
             </ui:VisualElement>
-            <ui:VisualElement name="Numpad" class="numpad" style="flex-direction: row; flex-wrap: wrap; flex-grow: 0; flex-shrink: 0; width: 46%; align-self: center; align-items: center; justify-content: center; flex-basis: initial; max-width: 300px; min-width: auto; height: 279px;">
-                <ui:Button text="1" display-tooltip-when-elided="true" name="button-one" class="button" />
-                <ui:Button text="2" display-tooltip-when-elided="true" name="button-two" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
-                <ui:Button text="3" display-tooltip-when-elided="true" name="button-three" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
-                <ui:Button text="4" display-tooltip-when-elided="true" name="button-four" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
-                <ui:Button text="5" display-tooltip-when-elided="true" name="button-five" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
-                <ui:Button text="6" display-tooltip-when-elided="true" name="button-six" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
-                <ui:Button text="7" display-tooltip-when-elided="true" name="button-seven" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
-                <ui:Button text="8" display-tooltip-when-elided="true" name="button-eight" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
-                <ui:Button text="9" display-tooltip-when-elided="true" name="button-nine" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
-                <ui:Button text="X" display-tooltip-when-elided="true" name="button-clear" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
-                <ui:Button text="0" display-tooltip-when-elided="true" name="button-zero" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
-                <ui:Button text="OK" display-tooltip-when-elided="true" name="button-ok" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+            <ui:VisualElement name="VisualElement" style="width: 30%; flex-grow: 0; min-width: 311px;">
+                <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Answer" style="align-items: center; -unity-text-align: upper-center; font-size: 35px; background-color: rgb(255, 255, 255); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; border-bottom-width: 1px; flex-wrap: nowrap; text-overflow: ellipsis; white-space: normal; flex-grow: 1; width: auto;" />
+                <ui:VisualElement name="Numpad" class="numpad" style="flex-wrap: wrap; flex-direction: row; flex-grow: 0; align-items: flex-start; justify-content: flex-start; align-self: auto; height: auto; width: 100%; background-color: rgba(255, 0, 0, 0); flex-basis: auto;">
+                    <ui:Button text="1" display-tooltip-when-elided="true" name="button1" class="button" style="background-color: rgb(255, 255, 255);" />
+                    <ui:Button text="2" display-tooltip-when-elided="true" name="button2" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                    <ui:Button text="3" display-tooltip-when-elided="true" name="button3" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                    <ui:Button text="4" display-tooltip-when-elided="true" name="button4" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                    <ui:Button text="5" display-tooltip-when-elided="true" name="button5" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                    <ui:Button text="6" display-tooltip-when-elided="true" name="button6" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                    <ui:Button text="7" display-tooltip-when-elided="true" name="button7" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                    <ui:Button text="8" display-tooltip-when-elided="true" name="button8" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                    <ui:Button text="9" display-tooltip-when-elided="true" name="button9" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                    <ui:Button text="X" display-tooltip-when-elided="true" name="button-clear" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                    <ui:Button text="0" display-tooltip-when-elided="true" name="button0" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                    <ui:Button text="OK" display-tooltip-when-elided="true" name="button-ok" class="button" style="width: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center;" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
