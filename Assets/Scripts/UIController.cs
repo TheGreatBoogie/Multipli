@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class UIController : MonoBehaviour
 {
+    private int _answer;
     public void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -24,8 +25,10 @@ public class UIController : MonoBehaviour
         Button buttonClear = root.Q<Button>("button-clear");
         Button buttonOk = root.Q<Button>("button-ok");
 
-        TextField textField = root.Q<TextField>("Answer");
-    
-        buttonOk.clicked += () => Debug.Log("Button OK is working");
+        Label myLabel = root.Q<Label>("Answer");
+
+        buttonOk.clicked += () => myLabel.text = "OK";
+        
+        
     }
 }
