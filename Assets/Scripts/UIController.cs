@@ -26,6 +26,6 @@ public class UIController : MonoBehaviour
 
         TextField textField = root.Q<TextField>("Answer");
     
-        buttonOk.clicked += () => Debug.Log("Value: " + textField.text);
+        buttonOk.clicked += () => Debug.Log("Button OK is working");
     }
 }
