@@ -1,20 +1,21 @@
 .button {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 1px;
+    margin-right: 1px;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 1px;
     flex-grow: 1;
     flex-wrap: nowrap;
     flex-basis: auto;
     flex-direction: column;
     flex-shrink: 1;
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
     align-items: stretch;
     align-self: auto;
     width: 100%;
+    background-color: rgb(226, 226, 226);
 }
 
 .text-block {
@@ -29,5 +30,20 @@
     flex-wrap: nowrap;
     align-items: stretch;
     justify-content: flex-start;
-    align-self: auto;
+    align-self: center;
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    border-right-width: 0;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
 }
