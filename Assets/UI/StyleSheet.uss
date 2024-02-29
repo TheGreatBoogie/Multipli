@@ -1,23 +1,11 @@
 .button {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    flex-basis: 33.333%;
-    flex-grow: 1;
-    -unity-background-image-tint-color: rgb(255, 255, 255);
-    background-color: rgb(255, 255, 255);
-    border-left-width: 2px;
-    border-right-width: 2px;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-left-color: rgba(144, 144, 144, 0);
-    border-right-color: rgba(144, 144, 144, 0);
-    border-top-color: rgba(144, 144, 144, 0);
-    border-bottom-color: rgba(144, 144, 144, 0);
-    font-size: 240%;
 }
 
 .text-block {
     font-size: 29px;
+}
+
+.button-container {
+    flex-grow: 1;
+    flex-basis: 33%;
 }
