@@ -26,6 +26,7 @@ public class UIController : MonoBehaviour
         // Subscribe to GameLogicController events
         _gameLogicController.OnNewProblem += UpdateCalculToResolve;
         _gameLogicController.OnScoreChanged += UpdateScore;
+        OnNumpadClear();    
     }
 
     private void OnDisable()

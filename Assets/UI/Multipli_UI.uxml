@@ -2,15 +2,15 @@
     <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=4e51d8174982f374f8429738a2553106&amp;type=3#StyleSheet" />
     <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-items: stretch; flex-wrap: wrap; overflow: hidden; flex-direction: row; flex-basis: auto; align-self: auto; justify-content: flex-start;">
         <ui:VisualElement name="Container" style="flex-wrap: nowrap; flex-direction: row; width: 50%; justify-content: flex-start; align-items: center; flex-grow: 1; align-self: flex-start; -unity-text-align: upper-left; padding-left: 3%; -unity-font-style: bold; padding-top: 3%;">
-            <ui:Label tabindex="-1" text="Score: 0" display-tooltip-when-elided="true" name="Score" class="question text-block" style="-unity-text-align: upper-left; flex-grow: 1; align-self: auto; font-size: 46px;" />
+            <ui:Label tabindex="-1" text="Score: 0" display-tooltip-when-elided="true" name="Score" class="question text-block" style="-unity-text-align: upper-left; flex-grow: 1; align-self: auto; font-size: 46px; -unity-font-style: normal;" />
         </ui:VisualElement>
         <ui:VisualElement name="Container" style="flex-wrap: wrap; flex-direction: column; width: 40%; justify-content: center; align-items: center; flex-grow: 1; align-self: auto; flex-basis: 50%; flex-shrink: 1;">
             <ui:VisualElement name="Text" style="-unity-text-align: upper-center; justify-content: flex-start; width: 100%; align-items: center; margin-bottom: 4%; flex-wrap: nowrap; flex-shrink: 0; flex-grow: 0; flex-basis: auto;">
                 <ui:Label tabindex="-1" text="Combien font" display-tooltip-when-elided="true" name="Question" class="question text-block" style="flex-grow: 0;" />
                 <ui:Label tabindex="-1" text="6 x 6 ?" display-tooltip-when-elided="true" name="CalculToResolve" class="question text-block" />
             </ui:VisualElement>
-            <ui:VisualElement name="VisualElement" style="width: 50%; flex-grow: 0; flex-direction: column; flex-wrap: nowrap; flex-shrink: 0; flex-basis: 40%;">
-                <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Answer" text="TEST" style="background-color: rgb(255, 255, 255); align-self: center; width: 99.6%; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; flex-basis: 13%; flex-shrink: 1; flex-wrap: nowrap; justify-content: flex-start; border-top-left-radius: 20px; border-top-right-radius: 20px; -unity-text-align: middle-center; font-size: 10%; -unity-font-style: bold;" />
+            <ui:VisualElement name="VisualElement" style="width: 50%; flex-grow: 0; flex-direction: column; flex-wrap: nowrap; flex-shrink: 0; flex-basis: 40%; max-width: 333px;">
+                <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Answer" text="TEST" style="background-color: rgb(255, 255, 255); align-self: center; width: 100%; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; flex-basis: 13%; flex-shrink: 1; flex-wrap: nowrap; justify-content: flex-start; border-top-left-radius: 10px; border-top-right-radius: 10px; -unity-text-align: middle-center; font-size: 20%; -unity-font-style: normal; min-height: 35px;" />
                 <ui:VisualElement name="Numpad" class="numpad" style="flex-wrap: nowrap; flex-direction: column; flex-grow: 1; align-items: auto; justify-content: flex-start; align-self: auto; height: auto; width: 100%; background-color: rgba(255, 0, 0, 0); flex-basis: auto;">
                     <ui:VisualElement name="VisualElement" class="row">
                         <ui:Button text="1" display-tooltip-when-elided="true" name="button1" class="button" />
@@ -28,9 +28,9 @@
                         <ui:Button text="9" display-tooltip-when-elided="true" name="button9" class="button" />
                     </ui:VisualElement>
                     <ui:VisualElement name="VisualElement" class="row">
-                        <ui:Button text="X" display-tooltip-when-elided="true" name="button-clear" class="button" style="border-bottom-left-radius: 20px;" />
+                        <ui:Button text="X" display-tooltip-when-elided="true" name="button-clear" class="button" style="border-bottom-left-radius: 10px;" />
                         <ui:Button text="0" display-tooltip-when-elided="true" name="button0" class="button" />
-                        <ui:Button text="ok" display-tooltip-when-elided="true" name="button-ok" class="button" style="border-bottom-right-radius: 20px;" />
+                        <ui:Button text="ok" display-tooltip-when-elided="true" name="button-ok" class="button" style="border-bottom-right-radius: 10px;" />
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
