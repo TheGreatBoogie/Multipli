@@ -95,7 +95,7 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: blend-VictoryMoves
     m_Type: 1
-    m_DefaultFloat: 2
+    m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
@@ -107,7 +107,7 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: blend-LooseMoves
     m_Type: 1
-    m_DefaultFloat: 0
+    m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
@@ -213,6 +213,22 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 13a6028bbfeabbe4a91cb3339acabfa4, type: 2}
     m_Threshold: 2
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: blend-IdleWalk
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: f73c58dfd64e240f6a8995989115ee15, type: 2}
+    m_Threshold: 3
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: blend-IdleWalk
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 7cb6e3bba5b584e82bfa04e3053d5e41, type: 2}
+    m_Threshold: 4
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -352,8 +368,8 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 260, y: 110, z: 0}
+  m_AnyStatePosition: {x: 250, y: 40, z: 0}
   m_EntryPosition: {x: -310, y: -100, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ExitPosition: {x: 420, y: 40, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 5779788453864151028}

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
-public class PlayerController : MonoBehaviour
+public class     PlayerController : MonoBehaviour
 {
 
     private GameLogicController _gameLogicController;
@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private void OnGoodAnswer()
     {
         var move = Random.Range(0, 5);
+        Debug.Log(move);
         animator.SetFloat("blend-VictoryMoves", move);
         animator.SetTrigger("victory");
     }
