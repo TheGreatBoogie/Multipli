@@ -9,6 +9,7 @@ public class GameLogicController : MonoBehaviour
     public event Action<int> OnScoreChanged;
     public event Action<string> OnNewProblem;
     public event Action GoodAnswer;
+    public event Action BadAnswer;
 
 
     private int _goodAnswer;
@@ -32,6 +33,7 @@ public class GameLogicController : MonoBehaviour
         else
         {
             // Handle incorrect answer if needed
+            BadAnswer?.Invoke();
             GenerateNewProblem();
         }
     }

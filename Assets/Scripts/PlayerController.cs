@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,11 +19,26 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        _gameLogicController.GoodAnswer += PlayerDance;
+        _gameLogicController.GoodAnswer += OnGoodAnswer;
+        _gameLogicController.BadAnswer += OnBadAnswer;
+    }
+    private void OnDisable()
+    {
+        _gameLogicController.GoodAnswer += OnGoodAnswer;
     }
 
-    private void PlayerDance()
+    private void OnBadAnswer()
     {
-        animator.SetTrigger("dancing");
+        var move = Random.Range(0, 2);
+        animator.SetFloat("blend-LooseMoves", move);
+        animator.SetTrigger("loose");
+    }
+
+
+    private void OnGoodAnswer()
+    {
+        var move = Random.Range(0, 5);
+        animator.SetFloat("blend-VictoryMoves", move);
+        animator.SetTrigger("victory");
     }
 }
