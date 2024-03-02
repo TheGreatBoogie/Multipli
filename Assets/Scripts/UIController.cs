@@ -68,7 +68,7 @@ public class UIController : MonoBehaviour
 
     private void OnNumpadClear()
     {
-        _answerLabel.text = "";
+            _answerLabel.text = "";
     }
 
     private void OnNumpadValidate()
