@@ -8,6 +8,8 @@ public class GameLogicController : MonoBehaviour
 
     public event Action<int> OnScoreChanged;
     public event Action<string> OnNewProblem;
+    public event Action GoodAnswer;
+
 
     private int _goodAnswer;
 
@@ -24,6 +26,7 @@ public class GameLogicController : MonoBehaviour
         {
             Score++;
             OnScoreChanged?.Invoke(Score);
+            GoodAnswer?.Invoke();
             GenerateNewProblem();
         }
         else

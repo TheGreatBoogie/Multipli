@@ -1,10 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=4e51d8174982f374f8429738a2553106&amp;type=3#StyleSheet" />
     <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-items: stretch; flex-wrap: wrap; overflow: hidden; flex-direction: row; flex-basis: auto; align-self: auto; justify-content: flex-start;">
-        <ui:VisualElement name="Container" style="flex-wrap: nowrap; flex-direction: row; width: 50%; justify-content: flex-start; align-items: center; flex-grow: 1; align-self: flex-start; -unity-text-align: upper-left; padding-left: 3%; -unity-font-style: bold; padding-top: 3%;">
-            <ui:Label tabindex="-1" text="Score: 0" display-tooltip-when-elided="true" name="Score" class="question text-block" style="-unity-text-align: upper-left; flex-grow: 1; align-self: auto; font-size: 46px; -unity-font-style: normal;" />
+        <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: column; width: 50%; padding-top: 2%; padding-left: 2%;">
+            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="Score" class="question text-block txt" />
         </ui:VisualElement>
-        <ui:VisualElement name="Container" style="flex-wrap: wrap; flex-direction: column; width: 40%; justify-content: center; align-items: center; flex-grow: 1; align-self: auto; flex-basis: 50%; flex-shrink: 1;">
+        <ui:VisualElement name="Container" style="flex-wrap: wrap; flex-direction: column; width: auto; justify-content: center; align-items: center; flex-grow: 1; align-self: auto; flex-basis: 50%; flex-shrink: 1;">
             <ui:VisualElement name="Text" style="-unity-text-align: upper-center; justify-content: flex-start; width: 100%; align-items: center; margin-bottom: 4%; flex-wrap: nowrap; flex-shrink: 0; flex-grow: 0; flex-basis: auto;">
                 <ui:Label tabindex="-1" text="Combien font" display-tooltip-when-elided="true" name="Question" class="question text-block" style="flex-grow: 0;" />
                 <ui:Label tabindex="-1" text="6 x 6 ?" display-tooltip-when-elided="true" name="CalculToResolve" class="question text-block" />

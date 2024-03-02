@@ -19,7 +19,7 @@
 }
 
 .text-block {
-    font-size: 29px;
+    font-size: 140%;
 }
 
 .row {

@@ -5,7 +5,7 @@ using System;
 public class UIController : MonoBehaviour
 {
     private Label _answerLabel;
-    private Label _calculToResolve;
+    private Label _calculToResolveLabel;
     private Label _scoreLabel;
     private GameLogicController _gameLogicController;
 
@@ -16,7 +16,7 @@ public class UIController : MonoBehaviour
         
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         _answerLabel = root.Q<Label>("Answer");
-        _calculToResolve = root.Q<Label>("CalculToResolve");
+        _calculToResolveLabel = root.Q<Label>("CalculToResolve");
         _scoreLabel = root.Q<Label>("Score");
         InitializeButtons(root);
     }
@@ -82,7 +82,7 @@ public class UIController : MonoBehaviour
 
     private void UpdateCalculToResolve(string problem)
     {
-        _calculToResolve.text = problem;
+        _calculToResolveLabel.text = problem;
     }
 
     private void UpdateScore(int newScore)
