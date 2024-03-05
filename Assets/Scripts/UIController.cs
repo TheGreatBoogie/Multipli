@@ -24,14 +24,14 @@ public class UIController : MonoBehaviour
     private void OnEnable()
     {
         // Subscribe to GameLogicController events
-        _gameLogicController.OnNewProblem += UpdateCalculToResolve;
+        _gameLogicController.OnNewProblem += UpdateTextBlock;
         _gameLogicController.OnScoreChanged += UpdateScore;
         OnNumpadClear();    
     }
 
     private void OnDisable()
     {
-        _gameLogicController.OnNewProblem -= UpdateCalculToResolve;
+        _gameLogicController.OnNewProblem -= UpdateTextBlock;
         _gameLogicController.OnScoreChanged -= UpdateScore;
     }
     
@@ -40,7 +40,7 @@ public class UIController : MonoBehaviour
         // Unsubscribe to prevent memory leaks
         if (_gameLogicController != null)
         {
-            _gameLogicController.OnNewProblem -= UpdateCalculToResolve;
+            _gameLogicController.OnNewProblem -= UpdateTextBlock;
             _gameLogicController.OnScoreChanged -= UpdateScore;
         }
     }
@@ -63,7 +63,14 @@ public class UIController : MonoBehaviour
 
     private void OnNumPadPressed(string number)
     {
-        _answerLabel.text += number;
+        if (_answerLabel.text == "?")
+        {
+            _answerLabel.text = number;
+        }
+        else
+        {
+            _answerLabel.text += number;
+        }
     }
 
     private void OnNumpadClear()
@@ -77,19 +84,17 @@ public class UIController : MonoBehaviour
         {
             _gameLogicController.CheckAnswer(answer);
         }
-        OnNumpadClear();
+        //OnNumpadClear();
     }
 
-    private void UpdateCalculToResolve(string problem)
+    private void UpdateTextBlock(string problem)
     {
         _calculToResolveLabel.text = problem;
+        _answerLabel.text = "?";
     }
-
+    
     private void UpdateScore(int newScore)
     {
         _scoreLabel.text = newScore.ToString();
-        Debug.Log("Score updated");
     }
-
-
 }

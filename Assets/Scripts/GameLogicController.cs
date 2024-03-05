@@ -52,6 +52,6 @@ public class GameLogicController : MonoBehaviour
         int firstNumber = Random.Range(1, 12);
         int secondNumber = Random.Range(1, 12);
         _goodAnswer = firstNumber * secondNumber;
-        OnNewProblem?.Invoke($"{firstNumber} x {secondNumber}");
+        OnNewProblem?.Invoke($"{firstNumber} x {secondNumber} = ");
     }
 }

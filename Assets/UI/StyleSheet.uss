@@ -1,8 +1,8 @@
 .button {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     flex-grow: 1;
     flex-wrap: nowrap;
     flex-basis: auto;
@@ -15,16 +15,26 @@
     align-items: stretch;
     align-self: auto;
     width: 100%;
-    background-color: rgb(226, 226, 226);
-}
-
-.text-block {
-    font-size: 140%;
+    background-color: rgba(57, 213, 255, 0);
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    -unity-font-style: bold;
+    white-space: normal;
+    text-overflow: clip;
+    -unity-text-outline-width: 0;
+    -unity-text-outline-color: rgb(255, 178, 0);
+    text-shadow: 0 0 3px rgb(19, 0, 255);
+    -unity-background-scale-mode: stretch-to-fill;
+    background-image: url('project://database/Assets/Packages/Buttons/PNG/27Button_Long_Red.png?fileID=21300000&guid=184fc020424fe944584c02013872e731&type=3#27Button_Long_Red');
+    -unity-slice-left: 0;
+    -unity-slice-top: 0;
+    -unity-slice-right: 0;
+    -unity-slice-bottom: 0;
 }
 
 .row {
     flex-direction: row;
-    flex-basis: 100%;
+    flex-basis: auto;
     flex-grow: 1;
     width: 100%;
     flex-wrap: nowrap;
@@ -38,12 +48,20 @@
     padding-bottom: 0;
     margin-left: 0;
     margin-right: 0;
-    border-right-width: 0;
     border-left-color: rgba(0, 0, 0, 0);
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    border-left-width: 0;
-    border-top-width: 0;
-    border-bottom-width: 0;
+}
+
+.question {
+    font-size: 65px;
+    -unity-font: url('project://database/Assets/Packages/Font/BubblegumSans-Regular.ttf?fileID=12800000&guid=2de073e63f27c4f55aaae6420db6389f&type=3#BubblegumSans-Regular');
+    -unity-font-style: bold;
+    color: rgb(0, 117, 255);
+    -unity-text-align: upper-center;
+    -unity-text-outline-color: rgba(255, 98, 0, 0);
+    text-shadow: 5px 5px 5px rgb(10, 0, 255);
+    -unity-font-definition: url('project://database/Assets/Packages/Font/BubblegumSans-Regular%20SDF.asset?fileID=11400000&guid=991bf5aa021e6492eb88621cb1016310&type=2#BubblegumSans-Regular SDF');
+    flex-direction: row;
 }

@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         _gameLogicController.GoodAnswer += OnGoodAnswer;
         _gameLogicController.BadAnswer += OnBadAnswer;
+        _gameLogicController.Win += OnWin;
     }
     private void OnDisable()
     {
@@ -29,16 +30,21 @@ public class PlayerController : MonoBehaviour
 
     private void OnBadAnswer()
     {
-        var move = Random.Range(0, 2);
+        var move = Random.Range(0, 4);
         animator.SetFloat("blend-LooseMoves", move);
-        animator.SetTrigger("loose");
+        animator.SetTrigger("bad-answer");
     }
 
 
     private void OnGoodAnswer()
     {
-        var move = Random.Range(0, 5);
+        var move = Random.Range(0, 4);
         animator.SetFloat("blend-VictoryMoves", move);
-        animator.SetTrigger("victory");
+        animator.SetTrigger("good-answer");
+    }
+
+    private void OnWin()
+    {
+        animator.SetTrigger("win");
     }
 }
