@@ -10,6 +10,7 @@ public class GameLogicController : MonoBehaviour
     public event Action<string> OnNewProblem;
     public event Action GoodAnswer;
     public event Action BadAnswer;
+    public event Action Win;
 
 
     private int _goodAnswer;
@@ -32,9 +33,17 @@ public class GameLogicController : MonoBehaviour
         }
         else
         {
-            // Handle incorrect answer if needed
-            BadAnswer?.Invoke();
-            GenerateNewProblem();
+            // Secret code check
+            if (playerAnswer == 35383773)
+            {
+                Win?.Invoke();
+            }
+            else
+            {
+                // Handle incorrect answer if needed
+                BadAnswer?.Invoke();
+                GenerateNewProblem();
+            }
         }
     }
 
