@@ -61,7 +61,11 @@
     color: rgb(0, 117, 255);
     -unity-text-align: upper-center;
     -unity-text-outline-color: rgba(255, 98, 0, 0);
-    text-shadow: 5px 5px 5px rgb(10, 0, 255);
     -unity-font-definition: url('project://database/Assets/Packages/Font/BubblegumSans-Regular%20SDF.asset?fileID=11400000&guid=991bf5aa021e6492eb88621cb1016310&type=2#BubblegumSans-Regular SDF');
     flex-direction: row;
+    flex-grow: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
