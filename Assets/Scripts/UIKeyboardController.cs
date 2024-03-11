@@ -2,19 +2,20 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System;
 
-public class UIController : MonoBehaviour
+public class UIKeyboardController : MonoBehaviour
 {
     private Label _answerLabel;
     private Label _calculToResolveLabel;
     private Label _scoreLabel;
     private GameLogicController _gameLogicController;
+    private VisualElement root;
 
     private void Awake()
     {
         // Find the GameLogicController in the scene
         _gameLogicController = FindObjectOfType<GameLogicController>();
         
-        VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+        root = GetComponent<UIDocument>().rootVisualElement;
         _answerLabel = root.Q<Label>("Answer");
         _calculToResolveLabel = root.Q<Label>("CalculToResolve");
         _scoreLabel = root.Q<Label>("Score");
@@ -23,9 +24,12 @@ public class UIController : MonoBehaviour
 
     private void OnEnable()
     {
+        root.style.display = DisplayStyle.None;
         // Subscribe to GameLogicController events
         _gameLogicController.OnNewProblem += UpdateTextBlock;
         _gameLogicController.OnScoreChanged += UpdateScore;
+        _gameLogicController.MainGameEnter += DisplayPannel;
+        _gameLogicController.MainGameExit += HidePannel;
         OnNumpadClear();    
     }
 
@@ -33,6 +37,10 @@ public class UIController : MonoBehaviour
     {
         _gameLogicController.OnNewProblem -= UpdateTextBlock;
         _gameLogicController.OnScoreChanged -= UpdateScore;
+        _gameLogicController.MainGameEnter -= DisplayPannel;
+        _gameLogicController.MainGameExit -= HidePannel;
+
+
     }
     
     private void OnDestroy()
@@ -96,5 +104,15 @@ public class UIController : MonoBehaviour
     private void UpdateScore(int newScore)
     {
         _scoreLabel.text = newScore.ToString();
+    }
+
+    private void DisplayPannel()
+    {
+        root.style.display = DisplayStyle.Flex;
+    }
+
+    private void HidePannel()
+    {
+        root.style.display = DisplayStyle.None;
     }
 }
