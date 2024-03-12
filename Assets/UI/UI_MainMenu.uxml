@@ -1,6 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; align-self: center; justify-content: center;">
-        <ui:Button text="New Game" display-tooltip-when-elided="true" name="NewGame" />
-        <ui:Button text="Options" display-tooltip-when-elided="true" />
+    <Style src="project://database/Assets/UI/MainMenuStyleSheet.uss?fileID=7433441132597879392&amp;guid=8c1f7f68c16a4e6479e8d061f7592bfb&amp;type=3#MainMenuStyleSheet" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 20%; align-self: center; justify-content: center;">
+        <ui:Button text="New Game" display-tooltip-when-elided="true" name="NewGame" class="button" />
+        <ui:Button text="Options" display-tooltip-when-elided="true" class="button" />
     </ui:VisualElement>
 </ui:UXML>

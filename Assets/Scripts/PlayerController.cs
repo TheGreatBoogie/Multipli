@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnDisable()
     {
-        _gameLogicController.GoodAnswer += OnGoodAnswer;
+        _gameLogicController.GoodAnswer -= OnGoodAnswer;
     }
 
     private void OnBadAnswer()
