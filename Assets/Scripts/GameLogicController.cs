@@ -13,8 +13,8 @@ public class GameLogicController : MonoBehaviour
     public event Action BadAnswer;
     public event Action Win;
     public event Action MainGameEnter;
-    public event Action MainMenuEnter;
     public event Action MainGameExit;
+    public event Action MainMenuEnter;
     public event Action MainMenuExit;
 
     private int _goodAnswer;

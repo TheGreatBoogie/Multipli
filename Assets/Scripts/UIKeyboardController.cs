@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UIElements;
-using System;
 
 public class UIKeyboardController : MonoBehaviour
 {
@@ -8,28 +7,30 @@ public class UIKeyboardController : MonoBehaviour
     private Label _calculToResolveLabel;
     private Label _scoreLabel;
     private GameLogicController _gameLogicController;
-    private VisualElement root;
+    private VisualElement _root;
 
     private void Awake()
     {
         // Find the GameLogicController in the scene
         _gameLogicController = FindObjectOfType<GameLogicController>();
         
-        root = GetComponent<UIDocument>().rootVisualElement;
-        _answerLabel = root.Q<Label>("Answer");
-        _calculToResolveLabel = root.Q<Label>("CalculToResolve");
-        _scoreLabel = root.Q<Label>("Score");
-        InitializeButtons(root);
+        _root = GetComponent<UIDocument>().rootVisualElement;
+        _answerLabel = _root.Q<Label>("Answer");
+        _calculToResolveLabel = _root.Q<Label>("CalculToResolve");
+        _scoreLabel = _root.Q<Label>("Score");
+        InitializeButtons(_root);
     }
 
     private void OnEnable()
     {
-        root.style.display = DisplayStyle.None;
+        _root.style.display = DisplayStyle.None;
         // Subscribe to GameLogicController events
         _gameLogicController.OnNewProblem += UpdateTextBlock;
         _gameLogicController.OnScoreChanged += UpdateScore;
-        _gameLogicController.MainGameEnter += DisplayPannel;
-        _gameLogicController.MainGameExit += HidePannel;
+        
+        // Display/Hide UI based on Camera position
+        _gameLogicController.MainGameEnter += DisplayPanel;
+        _gameLogicController.MainGameExit += HidePanel;
         OnNumpadClear();    
     }
 
@@ -37,8 +38,10 @@ public class UIKeyboardController : MonoBehaviour
     {
         _gameLogicController.OnNewProblem -= UpdateTextBlock;
         _gameLogicController.OnScoreChanged -= UpdateScore;
-        _gameLogicController.MainGameEnter -= DisplayPannel;
-        _gameLogicController.MainGameExit -= HidePannel;
+        
+        // Display/Hide UI based on Camera position
+        _gameLogicController.MainGameEnter -= DisplayPanel;
+        _gameLogicController.MainGameExit -= HidePanel;
 
 
     }
@@ -106,13 +109,13 @@ public class UIKeyboardController : MonoBehaviour
         _scoreLabel.text = newScore.ToString();
     }
 
-    private void DisplayPannel()
+    private void DisplayPanel()
     {
-        root.style.display = DisplayStyle.Flex;
+        _root.style.display = DisplayStyle.Flex;
     }
 
-    private void HidePannel()
+    private void HidePanel()
     {
-        root.style.display = DisplayStyle.None;
+        _root.style.display = DisplayStyle.None;
     }
 }

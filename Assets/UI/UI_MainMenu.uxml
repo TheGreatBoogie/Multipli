@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; align-self: center; justify-content: center;">
+        <ui:Button text="New Game" display-tooltip-when-elided="true" name="NewGame" />
+        <ui:Button text="Options" display-tooltip-when-elided="true" />
+    </ui:VisualElement>
+</ui:UXML>
