@@ -8,35 +8,16 @@ using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
-
-    private GameLogicController _gameLogicController;
     [SerializeField] private Animator animator;
-
-    private void Awake()
-    {
-        _gameLogicController = FindObjectOfType<GameLogicController>();
-    }
-
-    private void OnEnable()
-    {
-        _gameLogicController.GoodAnswer += OnGoodAnswer;
-        _gameLogicController.BadAnswer += OnBadAnswer;
-        _gameLogicController.Win += OnWin;
-    }
-    private void OnDisable()
-    {
-        _gameLogicController.GoodAnswer -= OnGoodAnswer;
-    }
-
-    private void OnBadAnswer()
+    
+    public void OnBadAnswer()
     {
         var move = Random.Range(0, 4);
         animator.SetFloat("blend-LooseMoves", move);
         animator.SetTrigger("bad-answer");
     }
-
-
-    private void OnGoodAnswer()
+    
+    public void OnGoodAnswer()
     {
         var move = Random.Range(0, 4);
         animator.SetFloat("blend-VictoryMoves", move);

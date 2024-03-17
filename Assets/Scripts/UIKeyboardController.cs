@@ -27,10 +27,7 @@ public class UIKeyboardController : MonoBehaviour
         // Subscribe to GameLogicController events
         _gameLogicController.OnNewProblem += UpdateTextBlock;
         _gameLogicController.OnScoreChanged += UpdateScore;
-        
-        // Display/Hide UI based on Camera position
-        _gameLogicController.MainGameEnter += DisplayPanel;
-        _gameLogicController.MainGameExit += HidePanel;
+
         OnNumpadClear();    
     }
 
@@ -38,12 +35,6 @@ public class UIKeyboardController : MonoBehaviour
     {
         _gameLogicController.OnNewProblem -= UpdateTextBlock;
         _gameLogicController.OnScoreChanged -= UpdateScore;
-        
-        // Display/Hide UI based on Camera position
-        _gameLogicController.MainGameEnter -= DisplayPanel;
-        _gameLogicController.MainGameExit -= HidePanel;
-
-
     }
     
     private void OnDestroy()
@@ -109,7 +100,7 @@ public class UIKeyboardController : MonoBehaviour
         _scoreLabel.text = newScore.ToString();
     }
 
-    private void DisplayPanel()
+    public void DisplayPanel()
     {
         _root.style.display = DisplayStyle.Flex;
     }

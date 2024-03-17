@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class GameLogicController : MonoBehaviour
@@ -9,14 +10,10 @@ public class GameLogicController : MonoBehaviour
 
     public event Action<int> OnScoreChanged;
     public event Action<string> OnNewProblem;
-    public event Action GoodAnswer;
-    public event Action BadAnswer;
+    
+    [SerializeField] private GameEvent OnGoodAnswerEvent;
+    [SerializeField] private GameEvent BadAnswer;
     public event Action Win;
-    public event Action MainGameEnter;
-    public event Action MainGameExit;
-    public event Action MainMenuEnter;
-    public event Action MainMenuExit;
-
     private int _goodAnswer;
 
     private void Awake()
@@ -24,22 +21,6 @@ public class GameLogicController : MonoBehaviour
         _mainCameraController = FindObjectOfType<MainCameraController>();
     }
 
-    private void OnEnable()
-    {
-        _mainCameraController.MainGameTriggerEnter += MainCameraControllerOnMainGameEnter;
-        _mainCameraController.MainGameTriggerExit += MainCameraControllerOnMainGameExit;
-        _mainCameraController.MainMenuTriggerEnter += MainCameraControllerOnMenuEnter;
-        _mainCameraController.MainMenuTriggerExit += MainCameraControllerOnMenuExit;
-    }
-
-
-    private void OnDisable()
-    {
-        _mainCameraController.MainGameTriggerEnter -= MainCameraControllerOnMainGameEnter;
-        _mainCameraController.MainGameTriggerExit -= MainCameraControllerOnMainGameExit;
-        _mainCameraController.MainMenuTriggerEnter -= MainCameraControllerOnMenuEnter;
-        _mainCameraController.MainMenuTriggerExit -= MainCameraControllerOnMenuExit;
-    }
     
     private void Start()
     {
@@ -48,24 +29,6 @@ public class GameLogicController : MonoBehaviour
         GenerateNewProblem();
     }
     
-    private void MainCameraControllerOnMenuEnter()
-    {
-        MainMenuEnter?.Invoke();
-    }
-    private void MainCameraControllerOnMainGameEnter()
-    {
-        MainGameEnter?.Invoke();
-    }
-    
-    private void MainCameraControllerOnMenuExit()
-    {
-        MainMenuExit?.Invoke();
-    }
-
-    private void MainCameraControllerOnMainGameExit()
-    {
-        MainGameExit?.Invoke();
-    }
 
     public void CheckAnswer(int playerAnswer)
     {
@@ -73,7 +36,7 @@ public class GameLogicController : MonoBehaviour
         {
             Score++;
             OnScoreChanged?.Invoke(Score);
-            GoodAnswer?.Invoke();
+            OnGoodAnswerEvent.Raise();
             GenerateNewProblem();
         }
         else
@@ -86,7 +49,7 @@ public class GameLogicController : MonoBehaviour
             else
             {
                 // Handle incorrect answer if needed
-                BadAnswer?.Invoke();
+                BadAnswer.Raise();
                 GenerateNewProblem();
             }
         }

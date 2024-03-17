@@ -21,27 +21,13 @@ public class UIMainMenuController : MonoBehaviour
         virtualCamera.Priority = 9;
     }
 
-    private void OnEnable()
-    {
-        // Display/Hide UI based on Camera position
-        _gameLogicController.MainMenuEnter += DisplayPanel;
-        _gameLogicController.MainMenuExit += HidePanel;
-    }
-
-    private void OnDisable()
-    {
-        // Display/Hide UI based on Camera position
-        _gameLogicController.MainMenuEnter -= DisplayPanel;
-        _gameLogicController.MainMenuExit -= HidePanel;
-
-    }
     
-    private void DisplayPanel()
+    public void DisplayPanel()
     {
         _root.style.display = DisplayStyle.Flex;
     }
 
-    private void HidePanel()
+    public void HidePanel()
     {
         _root.style.display = DisplayStyle.None;
     }

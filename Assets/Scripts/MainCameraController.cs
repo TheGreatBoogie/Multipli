@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MainCameraController : MonoBehaviour
 {
@@ -11,10 +12,10 @@ public class MainCameraController : MonoBehaviour
     public GameObject colliderMainGame;
     public GameObject colliderMenu;
 
-    public event Action MainGameTriggerEnter;
-    public event Action MainMenuTriggerEnter;
-    public event Action MainGameTriggerExit;
-    public event Action MainMenuTriggerExit;
+    [SerializeField] private GameEvent MainGameEnter;
+    [SerializeField] private GameEvent MainMenuEnter;
+    [SerializeField] private GameEvent MainGameExit;
+    [SerializeField] private GameEvent MainMenuExit;
    
     private void Awake()
     {
@@ -25,10 +26,10 @@ public class MainCameraController : MonoBehaviour
     {
         if (other == colliderMainGame.GetComponent<Collider>())
         {
-            MainGameTriggerEnter?.Invoke();
+            MainGameEnter.Raise();
         } else if (other == colliderMenu.GetComponent<Collider>())
         {
-            MainMenuTriggerEnter?.Invoke();
+            MainMenuEnter.Raise();
         }
     }
 
@@ -36,10 +37,10 @@ public class MainCameraController : MonoBehaviour
     {
         if (other == colliderMainGame.GetComponent<Collider>())
         {
-            MainGameTriggerExit?.Invoke();
+            MainGameExit.Raise();
         } else if (other == colliderMenu.GetComponent<Collider>())
         {
-            MainMenuTriggerExit?.Invoke();
+            MainMenuExit.Raise();
         }
     }
 }
