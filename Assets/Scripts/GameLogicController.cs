@@ -11,8 +11,8 @@ public class GameLogicController : MonoBehaviour
     public event Action<int> OnScoreChanged;
     public event Action<string> OnNewProblem;
     
-    [SerializeField] private GameEvent OnGoodAnswerEvent;
-    [SerializeField] private GameEvent BadAnswer;
+    [SerializeField] private GameEvent GoodAnswerEvent;
+    [SerializeField] private GameEvent BadAnswerEvent;
     public event Action Win;
     private int _goodAnswer;
 
@@ -36,7 +36,7 @@ public class GameLogicController : MonoBehaviour
         {
             Score++;
             OnScoreChanged?.Invoke(Score);
-            OnGoodAnswerEvent.Raise();
+            GoodAnswerEvent.Raise(this, null);
             GenerateNewProblem();
         }
         else
@@ -49,7 +49,7 @@ public class GameLogicController : MonoBehaviour
             else
             {
                 // Handle incorrect answer if needed
-                BadAnswer.Raise();
+                BadAnswerEvent.Raise(this, null);
                 GenerateNewProblem();
             }
         }

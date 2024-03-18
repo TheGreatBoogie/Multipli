@@ -16,7 +16,9 @@ public class MainCameraController : MonoBehaviour
     [SerializeField] private GameEvent MainMenuEnter;
     [SerializeField] private GameEvent MainGameExit;
     [SerializeField] private GameEvent MainMenuExit;
-   
+
+    public string myString = "This is a string";
+    
     private void Awake()
     {
         _gameLogicController = FindObjectOfType<GameLogicController>();
@@ -26,10 +28,10 @@ public class MainCameraController : MonoBehaviour
     {
         if (other == colliderMainGame.GetComponent<Collider>())
         {
-            MainGameEnter.Raise();
+            MainGameEnter.Raise(this, myString);
         } else if (other == colliderMenu.GetComponent<Collider>())
         {
-            MainMenuEnter.Raise();
+            MainMenuEnter.Raise(this, null);
         }
     }
 
@@ -37,10 +39,10 @@ public class MainCameraController : MonoBehaviour
     {
         if (other == colliderMainGame.GetComponent<Collider>())
         {
-            MainGameExit.Raise();
+            MainGameExit.Raise(this, null);
         } else if (other == colliderMenu.GetComponent<Collider>())
         {
-            MainMenuExit.Raise();
+            MainMenuExit.Raise(this, null);
         }
     }
 }

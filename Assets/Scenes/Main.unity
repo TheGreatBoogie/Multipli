@@ -2558,7 +2558,6 @@ GameObject:
   - component: {fileID: 264939951}
   - component: {fileID: 264939953}
   - component: {fileID: 264939954}
-  - component: {fileID: 264939955}
   m_Layer: 5
   m_Name: UI_KeyboardDocument
   m_TagString: Untagged
@@ -2611,34 +2610,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &264939954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264939950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 9f6ee4dfd0cc348eaa303cbee6c57a91, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 264939953}
-        m_TargetAssemblyTypeName: UIKeyboardController, Assembly-CSharp
-        m_MethodName: DisplayPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &264939955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3668,6 +3639,7 @@ MonoBehaviour:
   MainMenuEnter: {fileID: 11400000, guid: e7f26414bf85740bb8aefc4b74a78f8b, type: 2}
   MainGameExit: {fileID: 11400000, guid: b3f686cb5fcb84216b7fb2eaf522fd9e, type: 2}
   MainMenuExit: {fileID: 11400000, guid: ccb498448812743bc93298dd121bbf9d, type: 2}
+  myString: This is a string
 --- !u!4 &334950341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 677883068091563691, guid: 2f063d1731a14f24eb3d35f5ad829dc1,
@@ -20578,8 +20550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03684b800a1dcb46be4eb613f9816b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnGoodAnswerEvent: {fileID: 11400000, guid: a9cd239cf3282416db2cb6e52a646c59, type: 2}
-  BadAnswer: {fileID: 11400000, guid: f15dcaf6e184345ac86086052e0cf99a, type: 2}
+  GoodAnswerEvent: {fileID: 11400000, guid: a9cd239cf3282416db2cb6e52a646c59, type: 2}
+  BadAnswerEvent: {fileID: 11400000, guid: f15dcaf6e184345ac86086052e0cf99a, type: 2}
 --- !u!4 &1976178406
 Transform:
   m_ObjectHideFlags: 0

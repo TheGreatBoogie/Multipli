@@ -6,11 +6,11 @@ public class GameEvent : ScriptableObject
 {  
     HashSet<GameEventListener> listeners = new HashSet<GameEventListener>();  
   
-    public void Raise()  
+    public void Raise(Component sender, object data)  
     {  
         foreach (var eventListener in listeners)  
         {  
-            eventListener.OnEventRaised();  
+            eventListener.OnEventRaised(sender, data);  
         }  
     }  
   

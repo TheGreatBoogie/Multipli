@@ -1,14 +1,23 @@
 using UnityEngine;  
-using UnityEngine.Events;  
-  
+using UnityEngine.Events;
+
+
+[System.Serializable] public class CustomGameEvent : UnityEvent<Component, object>
+{
+    
+}
+
 public class GameEventListener : MonoBehaviour  
 {  
     [SerializeField] private GameEvent gameEvent;  
-    [SerializeField] private UnityEvent response;  
+    [SerializeField] private CustomGameEvent response;  
   
     private void OnEnable() => gameEvent.RegisterListener(this);  
   
-    private void OnDisable() => gameEvent.UnregisterListener(this);  
-  
-    public void OnEventRaised() => response.Invoke();  
+    private void OnDisable() => gameEvent.UnregisterListener(this);
+
+    public void OnEventRaised(Component sender, object data)
+    {
+        response.Invoke(sender, data);   
+    }  
 }
