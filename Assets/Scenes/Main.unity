@@ -2609,7 +2609,7 @@ GameObject:
   - component: {fileID: 264939954}
   - component: {fileID: 264939955}
   - component: {fileID: 264939956}
-  - component: {fileID: 264939957}
+  - component: {fileID: 264939958}
   m_Layer: 5
   m_Name: UI_Keyboard
   m_TagString: Untagged
@@ -2689,6 +2689,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 264939958}
+        m_TargetAssemblyTypeName: CountdownTimer, Assembly-CSharp
+        m_MethodName: StartCountdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &264939955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2745,7 +2757,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &264939957
+--- !u!114 &264939958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2754,17 +2766,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 264939950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Script: {fileID: 11500000, guid: 26bf571cf053c4b73b05ff65ae0ad310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 99c334e9634a444fa92148d1e65eb377, type: 2}
-  response:
+  countdownTimeInSeconds: 3
+  onCountdownFinished:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 264939953}
         m_TargetAssemblyTypeName: UIKeyboardController, Assembly-CSharp
         m_MethodName: DisplayKeyBoard
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

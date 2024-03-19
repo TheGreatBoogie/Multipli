@@ -94,7 +94,7 @@ public class UIKeyboardController : MonoBehaviour
         _root.style.display = DisplayStyle.None;
     }
 
-    public void DisplayKeyBoard(Component comp, object obj)
+    public void DisplayKeyBoard()
     {
         _keyboard.style.display = DisplayStyle.Flex;
     }
