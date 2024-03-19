@@ -7,9 +7,9 @@ public class CountdownTimer : MonoBehaviour
     public float countdownTimeInSeconds = 10f; // Default countdown time
     private float currentTime;
     private bool isCountingDown = false;
-
-    public UnityEvent onCountdownFinished; // Event to subscribe to for countdown completion
-
+    [SerializeField] private GameEvent onCountdownFinished;
+    [SerializeField] private GameEvent onCountdownTick;
+    
     private void Start()
     {
         ResetTimer(); // Initialize timer
@@ -33,10 +33,11 @@ public class CountdownTimer : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             currentTime--;
+            onCountdownTick.Raise(this, null);
             Debug.Log("Countdown: " + currentTime); // Optional: Update UI here
         }
         isCountingDown = false;
-        onCountdownFinished.Invoke(); // Notify subscribers that countdown finished
+        onCountdownFinished.Raise(this, null); // Notify subscribers that countdown finished
     }
 
     // Pause the countdown

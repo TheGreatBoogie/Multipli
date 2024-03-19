@@ -7,7 +7,8 @@ public class GameEvent : ScriptableObject
     HashSet<GameEventListener> listeners = new HashSet<GameEventListener>();  
   
     public void Raise(Component sender, object data)  
-    {  
+    {
+        Debug.Log($"Event: {this.name}\nTriggered by: {sender}\nData: {data}");
         foreach (var eventListener in listeners)  
         {  
             eventListener.OnEventRaised(sender, data);  

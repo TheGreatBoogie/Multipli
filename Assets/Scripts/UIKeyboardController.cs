@@ -29,7 +29,11 @@ public class UIKeyboardController : MonoBehaviour
         _root.style.display = DisplayStyle.None;
         OnNumpadClear();    
     }
-    
+
+    private void Start()
+    {
+        HidePanel();
+    }
 
     private void InitializeButtons(VisualElement root)
     {

@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=4e51d8174982f374f8429738a2553106&amp;type=3#StyleSheet" />
-    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-items: stretch; flex-wrap: nowrap; overflow: hidden; flex-direction: row; flex-basis: auto; align-self: auto; justify-content: flex-start; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255);">
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-items: stretch; flex-wrap: nowrap; overflow: hidden; flex-direction: row; flex-basis: auto; align-self: auto; justify-content: flex-start; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); display: flex;">
         <ui:VisualElement name="Container" style="flex-grow: 0; flex-direction: column; width: 50%; padding-top: 2%; padding-left: 2%; align-items: stretch; justify-content: flex-start; align-self: auto; flex-basis: auto;">
             <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="Score" class="text-block txt" style="-unity-font: url(&apos;project://database/Assets/Packages/Font/BubblegumSans-Regular.ttf?fileID=12800000&amp;guid=2de073e63f27c4f55aaae6420db6389f&amp;type=3#BubblegumSans-Regular&apos;); -unity-font-definition: url(&apos;project://database/Assets/Packages/Font/BubblegumSans-Regular%20SDF.asset?fileID=11400000&amp;guid=991bf5aa021e6492eb88621cb1016310&amp;type=2#BubblegumSans-Regular SDF&apos;); -unity-font-style: bold; color: rgb(0, 117, 255); font-size: 87px;" />
         </ui:VisualElement>
@@ -9,7 +9,7 @@
                 <ui:Label tabindex="-1" text="6 x 6 ?" display-tooltip-when-elided="true" name="CalculToResolve" class="text-block" />
                 <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Answer" text="TEST" style="color: rgb(240, 81, 102);" />
             </ui:VisualElement>
-            <ui:VisualElement name="Keyboard" style="width: 43%; flex-grow: 0; flex-direction: column; flex-wrap: nowrap; flex-shrink: 0; flex-basis: 45%; max-width: 333px; display: none;">
+            <ui:VisualElement name="Keyboard" style="width: 43%; flex-grow: 0; flex-direction: column; flex-wrap: nowrap; flex-shrink: 0; flex-basis: 45%; max-width: 333px; display: flex;">
                 <ui:VisualElement name="Numpad" class="numpad" style="flex-wrap: nowrap; flex-direction: column; flex-grow: 1; align-items: auto; justify-content: flex-start; align-self: auto; height: auto; width: 100%; background-color: rgba(255, 0, 0, 0); flex-basis: auto;">
                     <ui:VisualElement name="VisualElement" class="row">
                         <ui:Button text="1" display-tooltip-when-elided="true" name="button1" class="button" />

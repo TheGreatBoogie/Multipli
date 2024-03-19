@@ -1746,6 +1746,11 @@ GameObject:
   m_Component:
   - component: {fileID: 166706332}
   - component: {fileID: 166706333}
+  - component: {fileID: 166706335}
+  - component: {fileID: 166706336}
+  - component: {fileID: 166706337}
+  - component: {fileID: 166706334}
+  - component: {fileID: 166706338}
   m_Layer: 0
   m_Name: UI_CountDown
   m_TagString: Untagged
@@ -1782,8 +1787,133 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 7686186949703fe41b189d045b030cf6, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 0}
-  m_SortingOrder: 0
+  sourceAsset: {fileID: 9197481963319205126, guid: b2a655f029e804431b292c424e402399,
+    type: 3}
+  m_SortingOrder: 1
+--- !u!114 &166706334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166706331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 9f6ee4dfd0cc348eaa303cbee6c57a91, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 166706335}
+        m_TargetAssemblyTypeName: UICountDownController, Assembly-CSharp
+        m_MethodName: DisplayCountDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 166706336}
+        m_TargetAssemblyTypeName: CountdownTimer, Assembly-CSharp
+        m_MethodName: StartCountdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &166706335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166706331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f191869e2bfbb6841bc74ca726b67972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &166706336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166706331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bf571cf053c4b73b05ff65ae0ad310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTimeInSeconds: 3
+  onCountdownFinished: {fileID: 11400000, guid: 3f6ea2ec8788e524baa1228f265c5fd9,
+    type: 2}
+  onCountdownTick: {fileID: 11400000, guid: a3b7bda86902b6348ad556e280ff1b72, type: 2}
+--- !u!114 &166706337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166706331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 3f6ea2ec8788e524baa1228f265c5fd9, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 166706335}
+        m_TargetAssemblyTypeName: UICountDownController, Assembly-CSharp
+        m_MethodName: HideCountDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &166706338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166706331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: a3b7bda86902b6348ad556e280ff1b72, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 166706335}
+        m_TargetAssemblyTypeName: UICountDownController, Assembly-CSharp
+        m_MethodName: UpdateLabel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &170428628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2606,10 +2736,9 @@ GameObject:
   - component: {fileID: 264939952}
   - component: {fileID: 264939951}
   - component: {fileID: 264939953}
-  - component: {fileID: 264939954}
+  - component: {fileID: 264939957}
   - component: {fileID: 264939955}
   - component: {fileID: 264939956}
-  - component: {fileID: 264939958}
   m_Layer: 5
   m_Name: UI_Keyboard
   m_TagString: Untagged
@@ -2661,46 +2790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e89b3d8aaaa194f922b193a0b533e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &264939954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264939950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 9f6ee4dfd0cc348eaa303cbee6c57a91, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 264939953}
-        m_TargetAssemblyTypeName: UIKeyboardController, Assembly-CSharp
-        m_MethodName: DisplayPanel
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 264939958}
-        m_TargetAssemblyTypeName: CountdownTimer, Assembly-CSharp
-        m_MethodName: StartCountdown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &264939955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2757,7 +2846,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &264939958
+--- !u!114 &264939957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2766,17 +2855,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 264939950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26bf571cf053c4b73b05ff65ae0ad310, type: 3}
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTimeInSeconds: 3
-  onCountdownFinished:
+  gameEvent: {fileID: 11400000, guid: 3f6ea2ec8788e524baa1228f265c5fd9, type: 2}
+  response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 264939953}
         m_TargetAssemblyTypeName: UIKeyboardController, Assembly-CSharp
-        m_MethodName: DisplayKeyBoard
-        m_Mode: 1
+        m_MethodName: DisplayPanel
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
