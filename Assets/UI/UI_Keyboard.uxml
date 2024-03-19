@@ -9,7 +9,7 @@
                 <ui:Label tabindex="-1" text="6 x 6 ?" display-tooltip-when-elided="true" name="CalculToResolve" class="text-block" />
                 <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Answer" text="TEST" style="color: rgb(240, 81, 102);" />
             </ui:VisualElement>
-            <ui:VisualElement name="VisualElement" style="width: 43%; flex-grow: 0; flex-direction: column; flex-wrap: nowrap; flex-shrink: 0; flex-basis: 45%; max-width: 333px;">
+            <ui:VisualElement name="Keyboard" style="width: 43%; flex-grow: 0; flex-direction: column; flex-wrap: nowrap; flex-shrink: 0; flex-basis: 45%; max-width: 333px; display: none;">
                 <ui:VisualElement name="Numpad" class="numpad" style="flex-wrap: nowrap; flex-direction: column; flex-grow: 1; align-items: auto; justify-content: flex-start; align-self: auto; height: auto; width: 100%; background-color: rgba(255, 0, 0, 0); flex-basis: auto;">
                     <ui:VisualElement name="VisualElement" class="row">
                         <ui:Button text="1" display-tooltip-when-elided="true" name="button1" class="button" />

@@ -9,6 +9,7 @@ public class UIKeyboardController : MonoBehaviour
     private Label _scoreLabel;
     private GameLogicController _gameLogicController;
     private VisualElement _root;
+    private VisualElement _keyboard;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class UIKeyboardController : MonoBehaviour
         _answerLabel = _root.Q<Label>("Answer");
         _calculToResolveLabel = _root.Q<Label>("CalculToResolve");
         _scoreLabel = _root.Q<Label>("Score");
+        _keyboard = _root.Q<VisualElement>("Keyboard");
         InitializeButtons(_root);
     }
 
@@ -92,5 +94,13 @@ public class UIKeyboardController : MonoBehaviour
         _root.style.display = DisplayStyle.None;
     }
 
+    public void DisplayKeyBoard(Component comp, object obj)
+    {
+        _keyboard.style.display = DisplayStyle.Flex;
+    }
 
+    public void HideKeyBoard(Component comp, object obj)
+    {
+        _keyboard.style.display = DisplayStyle.None;
+    }
 }
