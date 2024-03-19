@@ -7,12 +7,13 @@ public class GameLogicController : MonoBehaviour
 {
     private MainCameraController _mainCameraController;
     public int Score { get; private set; }
-
-    public event Action<int> OnScoreChanged;
-    public event Action<string> OnNewProblem;
     
     [SerializeField] private GameEvent GoodAnswerEvent;
     [SerializeField] private GameEvent BadAnswerEvent;
+    [SerializeField] private GameEvent ScoreChangedEvent;
+    [SerializeField] private GameEvent NewProblemEvent;
+    [SerializeField] private GameEvent NewGame;
+
     public event Action Win;
     private int _goodAnswer;
 
@@ -24,8 +25,13 @@ public class GameLogicController : MonoBehaviour
     
     private void Start()
     {
+        NewGame.Raise(this, null);
+    }
+
+    public void OnNewGame()
+    {
         Score = 0;
-        OnScoreChanged?.Invoke(Score);
+        ScoreChangedEvent.Raise(this, Score);
         GenerateNewProblem();
     }
     
@@ -35,7 +41,7 @@ public class GameLogicController : MonoBehaviour
         if (playerAnswer == _goodAnswer)
         {
             Score++;
-            OnScoreChanged?.Invoke(Score);
+            ScoreChangedEvent.Raise(this, Score);
             GoodAnswerEvent.Raise(this, null);
             GenerateNewProblem();
         }
@@ -59,7 +65,7 @@ public class GameLogicController : MonoBehaviour
     {
         int firstNumber = Random.Range(1, 12);
         int secondNumber = Random.Range(1, 12);
-        _goodAnswer = firstNumber * secondNumber;
-        OnNewProblem?.Invoke($"{firstNumber} x {secondNumber} = ");
+        _goodAnswer = firstNumber + secondNumber;
+        NewProblemEvent.Raise(this,$"{firstNumber} + {secondNumber} = ");
     }
 }

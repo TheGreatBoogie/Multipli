@@ -16,8 +16,6 @@ public class MainCameraController : MonoBehaviour
     [SerializeField] private GameEvent MainMenuEnter;
     [SerializeField] private GameEvent MainGameExit;
     [SerializeField] private GameEvent MainMenuExit;
-
-    public string myString = "This is a string";
     
     private void Awake()
     {
@@ -28,7 +26,7 @@ public class MainCameraController : MonoBehaviour
     {
         if (other == colliderMainGame.GetComponent<Collider>())
         {
-            MainGameEnter.Raise(this, myString);
+            MainGameEnter.Raise(this, null);
         } else if (other == colliderMenu.GetComponent<Collider>())
         {
             MainMenuEnter.Raise(this, null);

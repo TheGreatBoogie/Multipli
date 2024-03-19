@@ -2558,8 +2558,10 @@ GameObject:
   - component: {fileID: 264939951}
   - component: {fileID: 264939953}
   - component: {fileID: 264939954}
+  - component: {fileID: 264939955}
+  - component: {fileID: 264939956}
   m_Layer: 5
-  m_Name: UI_KeyboardDocument
+  m_Name: UI_Keyboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2628,7 +2630,63 @@ MonoBehaviour:
       - m_Target: {fileID: 264939953}
         m_TargetAssemblyTypeName: UIKeyboardController, Assembly-CSharp
         m_MethodName: DisplayPanel
-        m_Mode: 1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &264939955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264939950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 9274d0239d42140579f31c002f0c92d5, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 264939953}
+        m_TargetAssemblyTypeName: UIKeyboardController, Assembly-CSharp
+        m_MethodName: UpdateScore
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &264939956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264939950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: a82adab8ed4c547d79fb64461f348be8, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 264939953}
+        m_TargetAssemblyTypeName: UIKeyboardController, Assembly-CSharp
+        m_MethodName: DisplayNewProblem
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3639,7 +3697,6 @@ MonoBehaviour:
   MainMenuEnter: {fileID: 11400000, guid: e7f26414bf85740bb8aefc4b74a78f8b, type: 2}
   MainGameExit: {fileID: 11400000, guid: b3f686cb5fcb84216b7fb2eaf522fd9e, type: 2}
   MainMenuExit: {fileID: 11400000, guid: ccb498448812743bc93298dd121bbf9d, type: 2}
-  myString: This is a string
 --- !u!4 &334950341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 677883068091563691, guid: 2f063d1731a14f24eb3d35f5ad829dc1,
@@ -20531,6 +20588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1976178406}
   - component: {fileID: 1976178405}
+  - component: {fileID: 1976178407}
   m_Layer: 0
   m_Name: GameLogicController
   m_TagString: Untagged
@@ -20552,6 +20610,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoodAnswerEvent: {fileID: 11400000, guid: a9cd239cf3282416db2cb6e52a646c59, type: 2}
   BadAnswerEvent: {fileID: 11400000, guid: f15dcaf6e184345ac86086052e0cf99a, type: 2}
+  ScoreChangedEvent: {fileID: 11400000, guid: 9274d0239d42140579f31c002f0c92d5, type: 2}
+  NewProblemEvent: {fileID: 11400000, guid: a82adab8ed4c547d79fb64461f348be8, type: 2}
+  NewGame: {fileID: 11400000, guid: 99c334e9634a444fa92148d1e65eb377, type: 2}
 --- !u!4 &1976178406
 Transform:
   m_ObjectHideFlags: 0
@@ -20567,6 +20628,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1976178407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976178404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 99c334e9634a444fa92148d1e65eb377, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1976178405}
+        m_TargetAssemblyTypeName: GameLogicController, Assembly-CSharp
+        m_MethodName: OnNewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1976419397 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6075866848947241547, guid: 989cb3a038b5e8a418f4c15ab40e8e08,

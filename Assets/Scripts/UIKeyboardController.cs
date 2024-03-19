@@ -25,28 +25,9 @@ public class UIKeyboardController : MonoBehaviour
     private void OnEnable()
     {
         _root.style.display = DisplayStyle.None;
-        // Subscribe to GameLogicController events
-        _gameLogicController.OnNewProblem += UpdateTextBlock;
-        _gameLogicController.OnScoreChanged += UpdateScore;
-
         OnNumpadClear();    
     }
-
-    private void OnDisable()
-    {
-        _gameLogicController.OnNewProblem -= UpdateTextBlock;
-        _gameLogicController.OnScoreChanged -= UpdateScore;
-    }
     
-    private void OnDestroy()
-    {
-        // Unsubscribe to prevent memory leaks
-        if (_gameLogicController != null)
-        {
-            _gameLogicController.OnNewProblem -= UpdateTextBlock;
-            _gameLogicController.OnScoreChanged -= UpdateScore;
-        }
-    }
 
     private void InitializeButtons(VisualElement root)
     {
@@ -78,7 +59,7 @@ public class UIKeyboardController : MonoBehaviour
 
     private void OnNumpadClear()
     {
-            _answerLabel.text = "";
+        _answerLabel.text = "";
     }
 
     private void OnNumpadValidate()
@@ -90,18 +71,18 @@ public class UIKeyboardController : MonoBehaviour
         //OnNumpadClear();
     }
 
-    private void UpdateTextBlock(string problem)
+    public void DisplayNewProblem(Component comp ,object problem)
     {
-        _calculToResolveLabel.text = problem;
+        _calculToResolveLabel.text = (string)problem;
         _answerLabel.text = "?";
     }
     
-    private void UpdateScore(int newScore)
+    public void UpdateScore(Component comp ,object newScore)
     {
         _scoreLabel.text = newScore.ToString();
     }
 
-    public void DisplayPanel()
+    public void DisplayPanel(Component comp, object obj)
     {
         _root.style.display = DisplayStyle.Flex;
     }
