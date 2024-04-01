@@ -2137,6 +2137,7 @@ GameObject:
   - component: {fileID: 198603115}
   - component: {fileID: 198603114}
   - component: {fileID: 198603112}
+  - component: {fileID: 198603116}
   m_Layer: 0
   m_Name: UI_Options
   m_TagString: Untagged
@@ -2204,6 +2205,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 198603115}
+        m_TargetAssemblyTypeName: UIOptionsController, Assembly-CSharp
+        m_MethodName: SaveOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &198603114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2245,6 +2258,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExitOptions: {fileID: 11400000, guid: 1b3dd69a5acee5e47a167378983f503e, type: 2}
+--- !u!114 &198603116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198603109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 99c334e9634a444fa92148d1e65eb377, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 198603115}
+        m_TargetAssemblyTypeName: UIOptionsController, Assembly-CSharp
+        m_MethodName: LoadOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &205930136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7667667299490085784, guid: c65df2ca4c250c442925bcdb64911c51,
@@ -2861,6 +2902,7 @@ GameObject:
   - component: {fileID: 264939957}
   - component: {fileID: 264939955}
   - component: {fileID: 264939956}
+  - component: {fileID: 264939958}
   m_Layer: 5
   m_Name: UI_Keyboard
   m_TagString: Untagged
@@ -2996,6 +3038,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &264939958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264939950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bf571cf053c4b73b05ff65ae0ad310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTimeInSeconds: 10
+  onCountdownFinished: {fileID: 0}
+  onCountdownTick: {fileID: 0}
 --- !u!4 &267157866 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7667667299490085784, guid: c65df2ca4c250c442925bcdb64911c51,
