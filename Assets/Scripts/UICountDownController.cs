@@ -29,7 +29,6 @@ public class UICountDownController : MonoBehaviour
 
     public void HideCountDown()
     {
-        Debug.Log("HideCountDown Called");
         _root.style.display = DisplayStyle.None;
     }
 
