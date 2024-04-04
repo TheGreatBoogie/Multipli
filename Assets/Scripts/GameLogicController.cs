@@ -17,6 +17,7 @@ public class GameLogicController : MonoBehaviour
     public event Action Win;
     private int _goodAnswer;
 
+
     private void Awake()
     {
         _mainCameraController = FindObjectOfType<MainCameraController>();
@@ -28,12 +29,13 @@ public class GameLogicController : MonoBehaviour
         NewGame.Raise(this, null);
     }
 
-    public void OnNewGame()
+    public void OnStartGame()
     {
         Score = 0;
         ScoreChangedEvent.Raise(this, Score);
         GenerateNewProblem();
     }
+    
     
 
     public void CheckAnswer(int playerAnswer)

@@ -64,22 +64,20 @@ public class UIOptionsController : MonoBehaviour
         {
             _gameMode = PlayerPrefs.GetInt("gameMode", 0);
             
-            var labelString = "";
             if (_gameMode == 0)
             {
-                labelString = "Type: Addition";
+                _root.Q<Button>("button_type").text = "Type: Addition";
             }
             else
             {
-                labelString= "Type: Multiplication";
+                _root.Q<Button>("button_type").text = "Type: Multiplication";
             }
-            _root.Q<Button>("button_type").text = labelString; 
         }
         else
         {
             Debug.Log("gameMode key not found... using default");
         }
-        Debug.Log("Options loaded: isTimer: {_isTimer} - gameMode: {_gameMode}");
+        Debug.Log($"Options loaded: isTimer: {_isTimer} - gameMode: {_gameMode}");
     }
 
     private void ButtonTimerOnclick()

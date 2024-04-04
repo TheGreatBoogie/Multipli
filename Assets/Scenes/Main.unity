@@ -1752,6 +1752,7 @@ GameObject:
   - component: {fileID: 166706337}
   - component: {fileID: 166706334}
   - component: {fileID: 166706338}
+  - component: {fileID: 166706339}
   m_Layer: 0
   m_Name: UI_CountDown
   m_TagString: Untagged
@@ -1906,6 +1907,34 @@ MonoBehaviour:
       - m_Target: {fileID: 166706335}
         m_TargetAssemblyTypeName: UICountDownController, Assembly-CSharp
         m_MethodName: UpdateLabel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &166706339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166706331}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 99c334e9634a444fa92148d1e65eb377, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 166706335}
+        m_TargetAssemblyTypeName: UICountDownController, Assembly-CSharp
+        m_MethodName: HideCountDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2903,6 +2932,7 @@ GameObject:
   - component: {fileID: 264939955}
   - component: {fileID: 264939956}
   - component: {fileID: 264939958}
+  - component: {fileID: 264939959}
   m_Layer: 5
   m_Name: UI_Keyboard
   m_TagString: Untagged
@@ -3038,6 +3068,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 264939953}
+        m_TargetAssemblyTypeName: UIKeyboardController, Assembly-CSharp
+        m_MethodName: CheckAndStartCountDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &264939958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3051,8 +3093,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTimeInSeconds: 10
-  onCountdownFinished: {fileID: 0}
-  onCountdownTick: {fileID: 0}
+  onCountdownFinished: {fileID: 11400000, guid: 8535f8c10eccd43adae77e75f40e5aed,
+    type: 2}
+  onCountdownTick: {fileID: 11400000, guid: a3b7bda86902b6348ad556e280ff1b72, type: 2}
+--- !u!114 &264939959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264939950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: a3b7bda86902b6348ad556e280ff1b72, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 264939953}
+        m_TargetAssemblyTypeName: UIKeyboardController, Assembly-CSharp
+        m_MethodName: UpdateTimerLabel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &267157866 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7667667299490085784, guid: c65df2ca4c250c442925bcdb64911c51,
@@ -21057,13 +21128,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 99c334e9634a444fa92148d1e65eb377, type: 2}
+  gameEvent: {fileID: 11400000, guid: 3f6ea2ec8788e524baa1228f265c5fd9, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1976178405}
         m_TargetAssemblyTypeName: GameLogicController, Assembly-CSharp
-        m_MethodName: OnNewGame
+        m_MethodName: OnStartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

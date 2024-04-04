@@ -11,6 +11,7 @@ public class UIKeyboardController : MonoBehaviour
     private GameLogicController _gameLogicController;
     private VisualElement _root;
     private VisualElement _keyboard;
+    private CountdownTimer _countdownTimer;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class UIKeyboardController : MonoBehaviour
         _scoreLabel = _root.Q<Label>("Score");
         _keyboard = _root.Q<VisualElement>("Keyboard");
         _timer = _root.Q<Label>("timer");
+        _countdownTimer = gameObject.GetComponent<CountdownTimer>();
         InitializeButtons(_root);
     }
 
@@ -34,7 +36,13 @@ public class UIKeyboardController : MonoBehaviour
 
     private void Start()
     {
+        HideTimerLabel();
         HidePanel();
+    }
+
+    private void HideTimerLabel()
+    {
+        _timer.style.display = DisplayStyle.None;
     }
 
     private void InitializeButtons(VisualElement root)
@@ -62,6 +70,15 @@ public class UIKeyboardController : MonoBehaviour
         else
         {
             _answerLabel.text += number;
+        }
+    }
+
+    public void CheckAndStartCountDown()
+    {
+        if (PlayerPrefs.GetInt("isTimer") == 1)
+        {
+            _timer.style.display = DisplayStyle.Flex;
+            _countdownTimer.StartCountdown();
         }
     }
 
@@ -109,6 +126,10 @@ public class UIKeyboardController : MonoBehaviour
     {
         _keyboard.style.display = DisplayStyle.None;
     }
-    
+
+    public void UpdateTimerLabel()
+    {
+        _timer.text = _countdownTimer.GetCurrentTime().ToString();
+    }
     
 }
