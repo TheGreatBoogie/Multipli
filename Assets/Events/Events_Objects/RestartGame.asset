@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 604b90519fd7d4fd6ac846744d16c16a, type: 3}
-  m_Name: Win
+  m_Name: RestartGame
   m_EditorClassIdentifier: 

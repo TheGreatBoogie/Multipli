@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgb(52, 70, 101); flex-direction: column; flex-basis: 0; align-items: center; justify-content: center;">
+        <ui:Label tabindex="-1" text="END GAME" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; -unity-font-style: bold; -unity-font: url(&apos;project://database/Assets/Packages/Font/BubblegumSans-Regular.ttf?fileID=12800000&amp;guid=2de073e63f27c4f55aaae6420db6389f&amp;type=3#BubblegumSans-Regular&apos;); -unity-font-definition: url(&apos;project://database/Assets/Packages/Font/BubblegumSans-Regular%20SDF.asset?fileID=11400000&amp;guid=991bf5aa021e6492eb88621cb1016310&amp;type=2#BubblegumSans-Regular SDF&apos;); justify-content: flex-start;" />
+        <ui:Button text="Button" display-tooltip-when-elided="true" name="button_newgame" />
+    </ui:VisualElement>
+</ui:UXML>

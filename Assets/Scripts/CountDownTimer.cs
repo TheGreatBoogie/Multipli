@@ -18,6 +18,7 @@ public class CountdownTimer : MonoBehaviour
     // Start the countdown
     public void StartCountdown()
     {
+        ResetTimer();
         if (!isCountingDown)
         {
             currentTime = countdownTimeInSeconds;

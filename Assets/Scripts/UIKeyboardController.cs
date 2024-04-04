@@ -112,7 +112,7 @@ public class UIKeyboardController : MonoBehaviour
         _root.style.display = DisplayStyle.Flex;
     }
 
-    private void HidePanel()
+    public void HidePanel()
     {
         _root.style.display = DisplayStyle.None;
     }
@@ -130,6 +130,12 @@ public class UIKeyboardController : MonoBehaviour
     public void UpdateTimerLabel()
     {
         _timer.text = _countdownTimer.GetCurrentTime().ToString();
+    }
+
+    public void OnRestartGame()
+    {
+        //DisplayPanel();
+        
     }
     
 }
