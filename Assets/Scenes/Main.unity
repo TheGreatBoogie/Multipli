@@ -2959,6 +2959,7 @@ GameObject:
   - component: {fileID: 264939956}
   - component: {fileID: 264939959}
   - component: {fileID: 264939960}
+  - component: {fileID: 264939961}
   m_Layer: 5
   m_Name: UI_Keyboard
   m_TagString: Untagged
@@ -3010,6 +3011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e89b3d8aaaa194f922b193a0b533e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GoBackToMenu: {fileID: 11400000, guid: 0f32f1dcc692f0c4ca42cf9f3ac6711f, type: 2}
 --- !u!114 &264939955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3190,6 +3192,46 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 264939953}
+        m_TargetAssemblyTypeName: UIKeyboardController, Assembly-CSharp
+        m_MethodName: HidePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &264939961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264939950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0f32f1dcc692f0c4ca42cf9f3ac6711f, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 264939958}
+        m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
+        m_MethodName: StopAllCoroutines
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 264939953}
         m_TargetAssemblyTypeName: UIKeyboardController, Assembly-CSharp
         m_MethodName: HidePanel
@@ -3979,6 +4021,8 @@ GameObject:
   - component: {fileID: 330585550}
   - component: {fileID: 330585549}
   - component: {fileID: 330585551}
+  - component: {fileID: 330585553}
+  - component: {fileID: 330585552}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4198,12 +4242,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7897d14026996047babb30e2d9ee98d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _virtualCamera: {fileID: 377322607}
   colliderMainGame: {fileID: 548050548}
   colliderMenu: {fileID: 979008313}
   MainGameEnter: {fileID: 11400000, guid: 9f6ee4dfd0cc348eaa303cbee6c57a91, type: 2}
   MainMenuEnter: {fileID: 11400000, guid: e7f26414bf85740bb8aefc4b74a78f8b, type: 2}
   MainGameExit: {fileID: 11400000, guid: b3f686cb5fcb84216b7fb2eaf522fd9e, type: 2}
   MainMenuExit: {fileID: 11400000, guid: ccb498448812743bc93298dd121bbf9d, type: 2}
+--- !u!114 &330585552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0f32f1dcc692f0c4ca42cf9f3ac6711f, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 330585551}
+        m_TargetAssemblyTypeName: MainCameraController, Assembly-CSharp
+        m_MethodName: OnMoveCameraToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &330585553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c7711d476b053bc43837e02eb5236295, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 330585551}
+        m_TargetAssemblyTypeName: MainCameraController, Assembly-CSharp
+        m_MethodName: OnMoveCameraToMainGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &334950341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 677883068091563691, guid: 2f063d1731a14f24eb3d35f5ad829dc1,
@@ -8347,6 +8448,7 @@ GameObject:
   - component: {fileID: 682285783}
   - component: {fileID: 682285784}
   - component: {fileID: 682285785}
+  - component: {fileID: 682285786}
   m_Layer: 5
   m_Name: UI_EndGame
   m_TagString: Untagged
@@ -8399,6 +8501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartGame: {fileID: 11400000, guid: 9f6ee4dfd0cc348eaa303cbee6c57a91, type: 2}
+  GoToMainMenu: {fileID: 11400000, guid: 0f32f1dcc692f0c4ca42cf9f3ac6711f, type: 2}
 --- !u!114 &682285783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8468,6 +8571,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 9f6ee4dfd0cc348eaa303cbee6c57a91, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 682285782}
+        m_TargetAssemblyTypeName: UIEndGameController, Assembly-CSharp
+        m_MethodName: HideUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &682285786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682285779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0f32f1dcc692f0c4ca42cf9f3ac6711f, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -9980,6 +10111,7 @@ GameObject:
   - component: {fileID: 844209143}
   - component: {fileID: 844209144}
   - component: {fileID: 844209145}
+  - component: {fileID: 844209146}
   m_Layer: 5
   m_Name: UI_MainMenu
   m_TagString: Untagged
@@ -10031,8 +10163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3955de94ff2564981b768bf0ea7f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virtualCamera: {fileID: 377322607}
-  EnterOptions: {fileID: 11400000, guid: 079dfc8a51fa3aa4988d171b81ad3c28, type: 2}
+  DisplayOptions: {fileID: 11400000, guid: 079dfc8a51fa3aa4988d171b81ad3c28, type: 2}
+  MoveCameraToMainGame: {fileID: 11400000, guid: c7711d476b053bc43837e02eb5236295,
+    type: 2}
 --- !u!114 &844209142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10136,6 +10269,34 @@ MonoBehaviour:
       - m_Target: {fileID: 844209141}
         m_TargetAssemblyTypeName: UIMainMenuController, Assembly-CSharp
         m_MethodName: DisplayPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &844209146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844209137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa274b3620df4cca9ad70214f20d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0f32f1dcc692f0c4ca42cf9f3ac6711f, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 844209141}
+        m_TargetAssemblyTypeName: UIMainMenuController, Assembly-CSharp
+        m_MethodName: MoveCameraToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

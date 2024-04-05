@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -67,7 +68,17 @@ public class GameLogicController : MonoBehaviour
     {
         int firstNumber = Random.Range(1, 12);
         int secondNumber = Random.Range(1, 12);
-        _goodAnswer = firstNumber + secondNumber;
-        NewProblemEvent.Raise(this,$"{firstNumber} + {secondNumber} = ");
+        
+        if (PlayerPrefs.GetInt("gameMode") == 1)
+        {
+            _goodAnswer = firstNumber + secondNumber;
+            NewProblemEvent.Raise(this,$"{firstNumber} + {secondNumber} = ");
+
+        } else if (PlayerPrefs.GetInt("gameMode") == 0)
+        {
+            _goodAnswer = firstNumber * secondNumber;
+            NewProblemEvent.Raise(this,$"{firstNumber} x {secondNumber} = ");
+        }
+
     }
 }

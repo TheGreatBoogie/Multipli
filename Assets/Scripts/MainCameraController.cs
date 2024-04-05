@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -8,6 +9,8 @@ using UnityEngine.Serialization;
 public class MainCameraController : MonoBehaviour
 {
     private GameLogicController _gameLogicController;
+
+    [SerializeField] private CinemachineVirtualCamera _virtualCamera;
 
     public GameObject colliderMainGame;
     public GameObject colliderMenu;
@@ -42,5 +45,15 @@ public class MainCameraController : MonoBehaviour
         {
             MainMenuExit.Raise(this, null);
         }
+    }
+
+    public void OnMoveCameraToMainGame()
+    {
+        _virtualCamera.Priority = 9;
+    }
+
+    public void OnMoveCameraToMainMenu()
+    {
+        _virtualCamera.Priority = 11;
     }
 }

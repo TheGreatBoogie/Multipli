@@ -6,12 +6,13 @@ public class UIKeyboardController : MonoBehaviour
 {
     private Label _answerLabel;
     private Label _calculToResolveLabel;
-    private Label _scoreLabel;
+    public Label _scoreLabel;
     private Label _timer;
     private GameLogicController _gameLogicController;
     private VisualElement _root;
     private VisualElement _keyboard;
     private CountdownTimer _countdownTimer;
+    [SerializeField] private GameEvent GoBackToMenu;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class UIKeyboardController : MonoBehaviour
         _gameLogicController = FindObjectOfType<GameLogicController>();
         
         _root = GetComponent<UIDocument>().rootVisualElement;
+        _root.Q<Button>("stopgame").RegisterCallback<ClickEvent>(evt => OnGoBackToMainMenu());
         _answerLabel = _root.Q<Label>("Answer");
         _calculToResolveLabel = _root.Q<Label>("CalculToResolve");
         _scoreLabel = _root.Q<Label>("Score");
@@ -26,6 +28,11 @@ public class UIKeyboardController : MonoBehaviour
         _timer = _root.Q<Label>("timer");
         _countdownTimer = gameObject.GetComponent<CountdownTimer>();
         InitializeButtons(_root);
+    }
+
+    private void OnGoBackToMainMenu()
+    {
+        GoBackToMenu.Raise(this, null);
     }
 
     private void OnEnable()
@@ -79,6 +86,11 @@ public class UIKeyboardController : MonoBehaviour
         {
             _timer.style.display = DisplayStyle.Flex;
             _countdownTimer.StartCountdown();
+        }
+        
+        if (PlayerPrefs.GetInt("isTimer") == 0)
+        {
+            _timer.style.display = DisplayStyle.None;
         }
     }
 

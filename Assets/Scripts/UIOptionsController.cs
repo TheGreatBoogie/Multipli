@@ -66,11 +66,11 @@ public class UIOptionsController : MonoBehaviour
             
             if (_gameMode == 0)
             {
-                _root.Q<Button>("button_type").text = "Type: Addition";
+                _root.Q<Button>("button_type").text = "Type: Multiplication";
             }
             else
             {
-                _root.Q<Button>("button_type").text = "Type: Multiplication";
+                _root.Q<Button>("button_type").text = "Type: Addition";
             }
         }
         else
@@ -97,16 +97,19 @@ public class UIOptionsController : MonoBehaviour
 
     private void ButtonGameTypeOnclick()
     {
+        Debug.Log("ButtonClicked");
         var labelString = "";
         if (_gameMode == 0)
         {
             _gameMode = 1;
             labelString = "Type: Addition";
+            Debug.Log("GameMode was 0 => 1");
         }
         else
         {
             _gameMode = 0;
             labelString= "Type: Multiplication";
+            Debug.Log("GameMode was 1 => 0");
         }
         _root.Q<Button>("button_type").text = labelString; 
     }
