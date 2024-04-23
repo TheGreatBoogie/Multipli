@@ -3144,7 +3144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26bf571cf053c4b73b05ff65ae0ad310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTimeInSeconds: 3
+  countdownTimeInSeconds: 2
   onCountdownFinished: {fileID: 11400000, guid: 8535f8c10eccd43adae77e75f40e5aed,
     type: 2}
   onCountdownTick: {fileID: 11400000, guid: a3b7bda86902b6348ad556e280ff1b72, type: 2}
@@ -8502,6 +8502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RestartGame: {fileID: 11400000, guid: 9f6ee4dfd0cc348eaa303cbee6c57a91, type: 2}
   GoToMainMenu: {fileID: 11400000, guid: 0f32f1dcc692f0c4ca42cf9f3ac6711f, type: 2}
+  _uiKeyboardController: {fileID: 264939953}
 --- !u!114 &682285783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8521,6 +8522,18 @@ MonoBehaviour:
       - m_Target: {fileID: 682285782}
         m_TargetAssemblyTypeName: UIEndGameController, Assembly-CSharp
         m_MethodName: ShowUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 682285782}
+        m_TargetAssemblyTypeName: UIEndGameController, Assembly-CSharp
+        m_MethodName: DisplayScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

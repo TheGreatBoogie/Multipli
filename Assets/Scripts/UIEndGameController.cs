@@ -9,6 +9,7 @@ public class UIEndGameController : MonoBehaviour
     private VisualElement _root;
     [SerializeField] private GameEvent RestartGame;
     [SerializeField] private GameEvent GoToMainMenu;
+    [SerializeField] private UIKeyboardController _uiKeyboardController;
     private Label _scoreLabel;
     
     private void Awake()
@@ -46,9 +47,9 @@ public class UIEndGameController : MonoBehaviour
         _root.style.display = DisplayStyle.Flex;
     }
 
-    public void DisplayScore(Component comp, Object obj)
+    public void DisplayScore()
     {
-        _scoreLabel.text = $"Score: {obj}";
+        _scoreLabel.text = $"Score : {_uiKeyboardController._scoreLabel.text}";
     }
     
     
