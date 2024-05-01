@@ -3144,7 +3144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26bf571cf053c4b73b05ff65ae0ad310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTimeInSeconds: 2
+  countdownTimeInSeconds: 60
   onCountdownFinished: {fileID: 11400000, guid: 8535f8c10eccd43adae77e75f40e5aed,
     type: 2}
   onCountdownTick: {fileID: 11400000, guid: a3b7bda86902b6348ad556e280ff1b72, type: 2}
